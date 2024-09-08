@@ -1,0 +1,9 @@
+Initialize the terraform
+terraform init
+
+Run command like a dry run
+terraform plan
+
+terraform apply
+
+terraform destroy
