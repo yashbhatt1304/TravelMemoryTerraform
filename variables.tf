@@ -13,5 +13,11 @@ variable "ami_id" {
 variable "name_tag"{
     description = "This is the tag for all the aws resources"
     type = string
-    default = "Prashant"
+    default = "Yash"
+}
+
+variable "environment" {
+  description = "Environment Variable"
+  type = string
+  default = "development"
 }
