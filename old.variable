@@ -1,0 +1,78 @@
+variable "instance_count" {
+  description = "Number of instances to launch"
+  type = number
+  default = 3
+}
+
+variable "is_logging_enable" {
+  description = "This would be for enabling the logging"
+  type = bool
+  default = false
+}
+
+variable "az" {
+  description = "List of az"
+  type = list(string)
+  default = [ "ap-northeast-2a", "ap-northeast-2b", "ap-northeast-2c" ]
+}
+
+variable "instance_config" {
+  description = "Advance Config"
+  type = object({
+    instance_type = string
+    ami_id = string
+  })
+
+  default = {
+    instance_type = "t2.micro"
+    ami_id = "ami-05d2438ca66594916"
+  }
+
+}
+
+variable "specific_config" {
+  description = "It should take any value"
+  type = any
+}
+
+variable "region_mapping" {
+  description = "Mapping of the regions"
+  type = map(string)
+  default = {
+    "us-east-1" = "US East (N. Virginia)"
+    "us-west-1" = "US West (N. California)"
+  }
+}
+
+resource "aws_instance" "app_server2" {
+  count = length(var.instance_types_list)
+  ami           = var.ami_id
+  instance_type = var.instance_types_list[count.index]
+  tags = {
+    Name = "Server-${count.index}"
+  }
+}
+
+variable "instance_types_list" {
+  type = list(string)
+  default = [ "t2.micro", "t2.micro", "t2.medium", "t2.small" ]
+}
+
+output "instance_public_ip_appserver2" {
+    description = "This is the public IP for the EC2 instance"
+    value = [for i in aws_instance.app_server2 : i.public_ip ]
+}
+
+resource "aws_instance" "app_server2" {
+  count = length(var.instance_types_list)
+  ami           = var.ami_id
+  instance_type = var.instance_types_list[count.index]
+  tags = {
+    Name = "Server-${count.index}"
+  }
+}
+
+variable "instance_types_list" {
+  type = list(string)
+  default = [ "t2.micro", "t2.micro", "t2.medium", "t2.small" ]
+}
