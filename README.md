@@ -1,3 +1,6 @@
+## Pre-requisites
+[Install Terraform](https://developer.hashicorp.com/terraform/install?product_intent=terraform)
+
 ## Steps
 1. First Make sure you had the **main.tf**, **variables.txt** & **output.tf** in the project directory.
 2. Run the below mentioned commands in given sequence.
@@ -19,3 +22,4 @@
 ## Reference & Links
 1. Follow this documentation for deploying [AWS EC2 using Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build)
 2. Official [AWS Terraform Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+3. You can checkout another end to end [Terraform Project](https://github.com/LeftAttention/nps-infra-as-code.git)
