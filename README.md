@@ -7,12 +7,12 @@
 > **terraform apply**  -->  This will apply the created cloud resources using terraform.
 > **terraform destroy**  -->  This will destroy the cloud resources created using terraform.
 3. Below listed are the terraform files.
-> =====basic files=====
+> =====basic files=====\n
 > main.tf (all the configurations)
 > variables.tf (all the variables e.g. IP_add)
 > output.tf (seriers of values that we want to extract)
 4. Type of varaible we can configure is terraform.
-> string. number. bool. list. set. tuple. obiect. anv. mad
+> string, number, bool, list, set, tuple, obiect, any 
 5. We can use loops in terraform.
 > Loops -› count, for_each, for, dynamic blocks
 
