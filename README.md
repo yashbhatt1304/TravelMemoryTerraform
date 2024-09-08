@@ -4,7 +4,7 @@
 ## Steps
 1. First Make sure you had the **main.tf**, **variables.txt** & **output.tf** in the project directory.
 2. Run the below mentioned commands in given sequence.
->> ===== basic cmds =====
+> ===== basic cmds =====
 > **terraform init**  -->  This will initialize terraform project
 > **terraform plan** -->  This is used like dry run
 > **terraform apply**  -->  This will apply the created cloud resources using terraform.
@@ -20,6 +20,7 @@
 > Loops -› count, for_each, for, dynamic blocks
 
 ## Reference & Links
-1. Follow this documentation for deploying [AWS EC2 using Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build)
-2. Official [AWS Terraform Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-3. You can checkout another end to end [Terraform Project](https://github.com/LeftAttention/nps-infra-as-code.git)
+1. Follow this documentation for deploying [AWS EC2 using Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build).
+2. Official [AWS Terraform Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs).
+3. You can checkout another end to end [Terraform Project](https://github.com/LeftAttention/nps-infra-as-code.git).
+4. Try out this [Problem Statement](https://docs.google.com/document/d/1LKNu9cKHmSsZFRrCx8U9rnD43O6JgErxwBPsVF76FrA/edit).
