@@ -1,0 +1,46 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.66.0"
+    }
+  }
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-05d2438ca66594916"
+  instance_type = var.environment == "production" ? "t2.medium" : "t2.micro"
+  tags = {
+    Name = "AppServer"
+  }
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-05d2438ca66594916"
+  # instance_type = var.environment == "production" ? "t2.medium" : "t2.micro"
+  instance_type = lookup({
+    "production" = "t2.large"
+    "staging" = "t2.medium"
+    "development" = "t2.micro"
+  }, var.environment, "t2.micro")
+  tags = {
+    Name = "AppServer"
+  }
+}
+
+resource "aws_security_group" "tm-backend-sg" {
+  name        = "tm-backend-sg"
+  description = "Allow SSH access from EC2 instance public IP"
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [aws_instance.app_server.public_ip] 
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
