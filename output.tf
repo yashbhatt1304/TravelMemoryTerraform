@@ -8,7 +8,7 @@ output "instance_id" {
     value = aws_instance.app_server.id
 }
 
-# output "s3_bucket" {
-#     description = "S3 ARN"
-#     value = aws_s3_bucket.yashS3Terraform.arn
-# }
+output "s3_bucket" {
+    description = "S3 ARN"
+    value = aws_s3_bucket.yash-s3-terraform.arn
+}
