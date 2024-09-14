@@ -21,3 +21,9 @@ variable "environment" {
   type = string
   default = "development"
 }
+
+# variable "ec2" {
+#   description = "Aws Ec2"
+#   type: string
+#   default = 
+# }
