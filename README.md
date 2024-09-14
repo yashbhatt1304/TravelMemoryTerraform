@@ -21,8 +21,9 @@
 6. Terraform Workspaces were used to create or manage resources specific to environments(Non Prod / Prod).
 > Command for getting list of all terraform workspaces
 `terraform workspace list`
-> Command to create new and to select workspaces
+> Command to create new workspace 
 `terraform workspace new <workspace-name>`
+> and to select workspace
 `terraform workspace select <workspace-name>` 
 
 ## Reference & Links
