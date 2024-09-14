@@ -10,7 +10,7 @@
 > **terraform apply**  -->  This will apply the created cloud resources using terraform.
 > **terraform destroy**  -->  This will destroy the cloud resources created using terraform.
 3. Below listed are the terraform files.
-> =====basic files=====\n
+> =====basic files=====
 > main.tf (all the configurations)
 > variables.tf (all the variables e.g. IP_add)
 > output.tf (seriers of values that we want to extract)
@@ -18,6 +18,12 @@
 > string, number, bool, list, set, tuple, obiect, any 
 5. We can use loops in terraform.
 > Loops -› count, for_each, for, dynamic blocks
+6. Terraform Workspaces were used to create or manage resources specific to environments(Non Prod / Prod).
+> Command for getting list of all terraform workspaces
+`terraform workspace list`
+> Command to create new and to select workspaces
+`terraform workspace new <workspace-name>`
+`terraform workspace select <workspace-name>` 
 
 ## Reference & Links
 1. Follow this documentation for deploying [AWS EC2 using Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build).
